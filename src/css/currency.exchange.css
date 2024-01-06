@@ -1,0 +1,72 @@
+.currency__exchange {
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 5px 10px 1px #888888;
+  width: 55vw;
+  margin: auto;
+  padding: 20px;
+}
+
+.rate__converter select {
+  width: 50px;
+  height: 35px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.rate__converter {
+  margin: auto;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .currency__exchange {
+    width: 85vw;
+  }
+  .rate__converter {
+    display: block;
+  }
+
+  .debit__card input {
+    width: 10px;
+    height: 10px;
+  }
+  .debit__card button {
+    width: 120px;
+  }
+  .debit__card button div img {
+    width: 60px;
+    height: 20px;
+  }
+}
+
+.debit__card {
+  display: flex;
+  justify-content: center;
+}
+
+.debit__card button {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.debit__card button div {
+  line-height: 0;
+}
+
+.debit__card button img {
+  width: 80px;
+  height: 30px;
+}
+.debit__card button input {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}

@@ -1,0 +1,26 @@
+.send_money_page {
+  margin: 100px auto;
+  padding: 70px 20px;
+  border-radius: 10px;
+  width: 40vw;
+  min-width: 400px;
+  background-color: rgb(236, 211, 173);
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(0, 119, 255, 0.795),
+    rgb(100, 143, 0)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom__text__fields {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.send_money_page button {
+  width: 120px;
+  margin: 10px auto;
+}

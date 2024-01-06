@@ -1,0 +1,120 @@
+.send__money__option {
+  margin: auto;
+  padding: 5px 10px;
+  width: 50vw;
+  height: auto;
+  position: relative;
+}
+
+.send__money__option button p {
+  color: #686868;
+  letter-spacing: 0.15px;
+  font-weight: 300;
+  font-size: 15px;
+  margin: 8px;
+}
+.send__money__option button strong {
+  margin-left: 8px;
+  color: blue;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.send__money__online {
+  border: 1px solid #d3d3d3;
+
+  background-color: #ebeaea;
+  height: 120px;
+  width: 180px;
+  position: relative;
+  margin: 20px 15px 20px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 4px 4px 4px 0px #888888;
+}
+
+.send__money__in__store {
+  border: 1px solid #d3d3d3;
+  background-color: #ebeaea;
+  height: 120px;
+  width: 180px;
+  margin: 15px 20px;
+  box-shadow: 4px 4px 4px 0px #888888;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.send__money__in__store img {
+  width: 20px;
+  height: 25px;
+}
+
+.store__add__on__map {
+  height: 100%;
+  background-image: url("/images/map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  animation: slideBg 10s alternate-reverse infinite; /* Adjust timing as needed */
+}
+
+@keyframes slideBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .send__money__in__store,
+  .send__money__online {
+    height: 80px;
+    width: 300px;
+    padding: 0;
+    margin: 5px 10px;
+  }
+  .send__money__option {
+    display: flex;
+  }
+  .send__money__option button p {
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .send__money__option button strong {
+    margin-left: 8px;
+    color: blue;
+    font-weight: 500;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .store__add__on__map {
+    height: auto;
+    background-size: 100vw, 70vh;
+  }
+  .store__add__on__map {
+    height: 55vh;
+    background-size: 230vw, 50vh;
+  }
+  .send__money__in__store,
+  .send__money__online {
+    height: 80px;
+    width: 300px;
+    padding: 0;
+    margin: 5px 10px;
+  }
+  .send__money__option {
+    display: flex;
+  }
+  .send__money__option button p {
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .send__money__option button strong {
+    margin-left: 8px;
+    color: blue;
+    font-weight: 500;
+    font-size: 15px;
+  }
+}

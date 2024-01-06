@@ -1,0 +1,41 @@
+.header__tabs .MuiTab-root {
+  font-size: 11px;
+  font-weight: 200;
+  color: black;
+}
+
+.sign_in_up__tabs {
+  position: fixed;
+  top: 70px;
+  left: 58vw;
+  background-color: rgb(226, 226, 226);
+  display: none;
+  flex-direction: column;
+  width: 150px;
+}
+
+.sign_in_up__tabs button {
+  margin: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .header__tabs a {
+    padding: auto;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    line-height: 0;
+    padding: 5px 0;
+    font-size: 25px;
+    color: #5b5a5a;
+    text-decoration: none;
+    min-width: 95px;
+  }
+
+  .header__tabs a button {
+    display: none;
+  }
+}
