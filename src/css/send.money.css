@@ -4,12 +4,8 @@
   border-radius: 10px;
   width: 40vw;
   min-width: 400px;
-  background-color: rgb(236, 211, 173);
-  background-image: linear-gradient(
-    to left bottom,
-    rgba(0, 119, 255, 0.795),
-    rgb(100, 143, 0)
-  );
+  border: 1px solid lightgray;
+  background-color: rgb(233, 233, 233);
   display: flex;
   flex-direction: column;
   align-items: center;

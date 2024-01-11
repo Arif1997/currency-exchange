@@ -47,7 +47,7 @@ const Header = () => {
             margin: "auto",
             justifyContent: "center",
             backgroundColor: "#F6F6F6",
-            height: "70px",
+            height: "60px",
             borderRadius: "15px",
             width: { md: "40%" },
           }}

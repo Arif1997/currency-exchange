@@ -1,7 +1,8 @@
 .currency__exchange {
   display: block;
   border-radius: 18px;
-  box-shadow: 0 5px 10px 1px #888888;
+  box-shadow: 4px 4px 4px 0px #888888;
+  border: 1px solid lightgray;
   width: 55vw;
   margin: auto;
   padding: 20px;

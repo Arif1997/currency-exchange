@@ -11,8 +11,7 @@ const SendMoney = () => {
   const userString: string | null = localStorage.getItem("user");
   let user_data: UserData = userString && JSON.parse(userString);
   const [formData, setFormData] = useState({
-    sender_name: `${user_data.first_name} ${user_data.last_name}
-    }`,
+    sender_name: `${user_data.first_name} ${user_data.last_name}`,
     receiver_name: "Jawad",
     email: `${user_data.email}`,
     receiver_id: "O2448070",

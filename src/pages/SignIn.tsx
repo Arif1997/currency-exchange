@@ -53,8 +53,13 @@ export default function SignIn() {
     login(user_data.email, user_data.password, user_data.role).then(
       () => {
         authHeader();
-        navigate("/");
-        window.location.reload();
+        if (user_data.role === "user") {
+          navigate("/");
+          window.location.reload();
+        } else {
+          navigate("/dashboard");
+          window.location.reload();
+        }
       },
       (error): any => {
         console.log(error);

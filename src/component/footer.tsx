@@ -19,6 +19,7 @@ export const Footer = () => {
   useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box
+      id="footer"
       component="footer"
       sx={{
         backgroundColor: (theme) =>

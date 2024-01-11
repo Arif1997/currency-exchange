@@ -11,16 +11,29 @@ import SignIn from "./pages/SignIn";
 import { Footer } from "./component/footer";
 import Header from "./component/header";
 import { validateToken } from "./services/token.validation";
+import { Dashboard } from "./pages/Dashboard";
 
 // Custom PrivateRoute component for authenticated routes
 const PrivateRoute = () => {
-  const token = localStorage.getItem("user")
-    ? JSON.parse(localStorage.getItem("user")!).token
-    : null;
+  const isUserType = localStorage.getItem("user");
+  const isAdminType = localStorage.getItem("admin");
+  if (isUserType) {
+    const token = localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user")!).token
+      : null;
 
-  // Validate the token
-  const isAuthenticated = token ? validateToken(token) : false;
-  return isAuthenticated ? <Outlet /> : <Navigate to="/signin" />;
+    // Validate the token
+    const isAuthenticated = token ? validateToken(token) : false;
+    return isAuthenticated ? <Outlet /> : <Navigate to="/signin" />;
+  } else if (isAdminType) {
+    const token = localStorage.getItem("admin")
+      ? JSON.parse(localStorage.getItem("admin")!).token
+      : null;
+
+    // Validate the token
+    const isAuthenticated = token ? validateToken(token) : false;
+    return isAuthenticated ? <Outlet /> : <Navigate to="/dashboard" />;
+  }
 };
 function App() {
   return (
@@ -37,6 +50,9 @@ function App() {
         <Route path="/payment-fail" element={<PaymentFail />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/dashboard" element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
       </Routes>
       <Footer />
     </>

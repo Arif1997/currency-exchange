@@ -15,9 +15,10 @@ export const login = async (email: string, password: string, role: string) => {
     password,
     role,
   });
-  if (response.data.token) {
+  if (response.data.token && role === "user") {
     localStorage.setItem("user", JSON.stringify(response.data));
-  }
+  } else if (response.data.token && role === "admin")
+    localStorage.setItem("admin", JSON.stringify(response.data));
 
   return response.data;
 };

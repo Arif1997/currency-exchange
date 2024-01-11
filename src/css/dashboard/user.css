@@ -1,0 +1,21 @@
+#user__management__btn {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+}
+#user__management__btn button {
+  background-color: blue;
+  font-size: 14px;
+  color: white;
+  min-width: 150px;
+  margin: 20px auto;
+}
+.user__update__section label {
+  margin: auto 20px;
+}
+
+.user__update__section button {
+  background-color: blue;
+  font-size: 14px;
+  color: white;
+}
