@@ -9,6 +9,7 @@ import { Box, Grid, styled } from "@mui/material";
 import axios from "axios";
 import "../../css/dashboard/store.css";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../ngrokurl";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -23,7 +24,7 @@ export default function Store() {
 
   useEffect(() => {
     const getOffices = async () => {
-      const response = await axios.get("http://localhost:8000/office/");
+      const response = await axios.get(`${BASE_URL}office/`);
       setOffices(response.data.offices);
     };
     getOffices();
@@ -36,37 +37,29 @@ export default function Store() {
   const storeCreator = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const address_data = {
+      door_number: data.get("door_number"),
+      apartment: data.get("apartment"),
+      street: data.get("street"),
+      city: data.get("city"),
+      country: data.get("country"),
+      postal_code: data.get("postal_code"),
+    };
     const admin_data = {
-      name: data.get("name"),
+      name: data.get("office_name"),
       email: data.get("email"),
       phone: data.get("phone"),
       password: data.get("password"),
       gov_id_type: selectedGovId,
       gov_id_number: data.get("gov_id_number"),
       isActive: false,
-      admin_id: "4b31e891-1874-4a49-873b-bfcf4091161e",
+      admin_id: "1b984e8e-5c74-4c0d-b55f-5dba69c7ee7e",
       secret_key: data.get("secret_key"),
+      address: address_data,
     };
 
-    const response = await axios.post(
-      "http://localhost:8000/office/create",
-      admin_data
-    );
+    const response = await axios.post(`${BASE_URL}office/create`, admin_data);
     console.log(response);
-    const address_data = {
-      add_holder_type: "store",
-      door_number: data.get("door_number"),
-      apartment: data.get("apartment"),
-      street: data.get("street"),
-      country: data.get("country"),
-      city: data.get("city"),
-      postal_code: data.get("postal_code"),
-    };
-    const address = await axios.post(
-      "http://localhost:8000/office/address/create",
-      address_data
-    );
-    console.log(address);
   };
   return (
     <div>
@@ -75,7 +68,11 @@ export default function Store() {
           <Grid container spacing={2}>
             <Grid item xs={3}>
               <Item>
-                <input type="text" placeholder="Name" name="name" />
+                <input
+                  type="text"
+                  placeholder="Office Name"
+                  name="office_name"
+                />
               </Item>
             </Grid>
 
@@ -126,7 +123,11 @@ export default function Store() {
             </Grid>
             <Grid item xs={3}>
               <Item>
-                <input type="text" placeholder="Door No." name="door_number" />
+                <input
+                  type="number"
+                  placeholder="Door No."
+                  name="door_number"
+                />
               </Item>
             </Grid>
 
@@ -174,7 +175,7 @@ export default function Store() {
             <TableHead>
               <TableRow>
                 <TableCell>id</TableCell>
-                <TableCell>Manager Name</TableCell>
+                <TableCell>Office Name</TableCell>
 
                 <TableCell>Email</TableCell>
                 <TableCell>Telephone</TableCell>

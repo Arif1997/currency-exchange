@@ -4,15 +4,13 @@
   margin-top: 80px;
 }
 .sign__up {
-  background-image: linear-gradient(
-    to left bottom,
-    rgb(2, 64, 134),
-    rgb(180, 255, 251)
-  );
+  box-shadow: 0px 0px 8px 0.5px #d4d4d4;
+  border: 1px solid lightgray;
   border-radius: 20px;
   margin: 30px auto auto auto;
   height: auto;
   width: 30vw;
+  padding: 20px;
 }
 .sign__up__page .sign__up__left__design {
   margin: 40px auto auto auto;
@@ -24,5 +22,11 @@
 }
 
 .sign__up a {
-  color: rgb(87, 3, 59);
+  color: rgb(51, 51, 51);
+}
+
+@media screen and (max-width: 900px) {
+  .sign__up__page .sign__up__left__design {
+    display: none;
+  }
 }

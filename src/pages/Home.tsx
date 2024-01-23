@@ -10,7 +10,7 @@ const Home = () => {
   let iconStyles = { color: "blue", fontSize: "1.5em" };
   return (
     <>
-      <div className="store__add__on__map"></div>
+      <div className="home__page"></div>
       <section className="send__money__option">
         <button
           className="send__money__online"

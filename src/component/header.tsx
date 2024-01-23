@@ -49,7 +49,7 @@ const Header = () => {
             backgroundColor: "#F6F6F6",
             height: "60px",
             borderRadius: "15px",
-            width: { md: "40%" },
+            width: "420px",
           }}
         >
           <Toolbar sx={{ minHeight: { xs: "0px", md: "0px" } }}>
@@ -84,20 +84,35 @@ const Header = () => {
                   component={Link}
                   to="/contact"
                 />
-
-                <Tab
-                  onClick={toggleSignButtons}
-                  label="Account"
-                  icon={<RiAccountBoxLine />}
-                  component={Link}
-                  to="/#"
-                />
               </Tabs>
             </IconContext.Provider>
           </Toolbar>
         </AppBar>
       </Box>
-      <div className="sign_in_up__tabs">
+      <div>
+        <button
+          onClick={toggleSignButtons}
+          style={{
+            width: "90px",
+            padding: "12px",
+            float: "right",
+            position: "fixed",
+            right: "10px",
+            top: "0",
+            background: "lightgray",
+            fontSize: "12px",
+            fontWeight: "400",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            borderRadius: "50px",
+          }}
+        >
+          <RiAccountBoxLine size={20} />
+        </button>
+      </div>
+
+      <div className="sign_in_up__tabs" style={{ zIndex: "10" }}>
         <Button
           variant="contained"
           sx={{ marginLeft: "auto" }}

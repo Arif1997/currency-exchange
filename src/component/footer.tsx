@@ -174,7 +174,7 @@ export const Footer = () => {
         <Box mt={5}>
           <Typography variant="body2" color="text.secondary" align="center">
             {"Copyright © "}
-            <Link color="inherit" href="https://smartsydney.com">
+            <Link color="inherit" href="https://smartsydney.org">
               Smart Sydney
             </Link>{" "}
             {new Date().getFullYear()}

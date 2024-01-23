@@ -6,12 +6,11 @@
 
 .sign_in_up__tabs {
   position: fixed;
-  top: 70px;
-  left: 58vw;
+  top: 60px;
+  right: 10px;
   background-color: rgb(226, 226, 226);
   display: none;
   flex-direction: column;
-  width: 150px;
 }
 
 .sign_in_up__tabs button {

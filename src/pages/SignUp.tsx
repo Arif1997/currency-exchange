@@ -15,24 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "../css/sign-up.css";
 import axios from "axios";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://www.smartsydney.org/">
-        Smart Sydney
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { BASE_URL } from "../ngrokurl";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -51,10 +34,7 @@ export default function SignUp() {
       stripe_id: "",
     };
 
-    const response = await axios.post(
-      "http://localhost:8000/user/insert",
-      user_data
-    );
+    const response = await axios.post(`${BASE_URL}/user/insert`, user_data);
     if (response) {
       navigate("/signin");
     }
@@ -155,7 +135,6 @@ export default function SignUp() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 5 }} />
         </Container>
       </div>
     </ThemeProvider>

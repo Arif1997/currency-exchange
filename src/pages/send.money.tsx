@@ -3,13 +3,13 @@ import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import { UserData } from "../interfaces";
 import { IoMdSwap } from "react-icons/io";
 import "../css/send.money.css";
+import { BASE_URL } from "../ngrokurl";
 
 const SendMoney = () => {
   const userString: string | null = localStorage.getItem("user");
-  let user_data: UserData = userString && JSON.parse(userString);
+  let user_data: any = userString && JSON.parse(userString);
   const [formData, setFormData] = useState({
     sender_name: `${user_data.first_name} ${user_data.last_name}`,
     receiver_name: "Jawad",
@@ -52,7 +52,7 @@ const SendMoney = () => {
 
     const payment = async () => {
       const response = await axios.post(
-        "http://localhost:8000/transaction/payment",
+        `${BASE_URL}transaction/payment`,
         formData
       );
       const url = response.data.url;
@@ -65,7 +65,7 @@ const SendMoney = () => {
     };
     await payment();
     const response = await axios.post(
-      "http://localhost:8000/transaction/receipt",
+      `${BASE_URL}/transaction/receipt`,
       formData
     );
     console.log(response);

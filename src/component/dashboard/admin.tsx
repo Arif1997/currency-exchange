@@ -14,6 +14,7 @@ import Paper from "@mui/material/Paper";
 import axios from "axios";
 import "../../css/dashboard/admin.css";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../ngrokurl";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -35,16 +36,24 @@ export const Admin = () => {
       password: data.get("password"),
       secret_key: data.get("secret_key"),
     };
+    const address_data = {
+      door_number: data.get("door_number"),
+      apartment: data.get("apartment"),
+      street: data.get("street"),
+      country: data.get("country"),
+      city: data.get("city"),
+      postal_code: data.get("postal_code"),
+    };
 
-    const response = await axios.post(
-      "http://localhost:8000/admin/create",
-      admin_data
-    );
+    const response = await axios.post(`${BASE_URL}admin/create`, {
+      admin_data,
+      address_data,
+    });
     console.log(response);
   };
   const [admins, setAdmins] = useState<any[]>();
   useEffect(() => {
-    fetch("http://localhost:8000/admin/")
+    fetch(`${BASE_URL}admin/`)
       .then((response) => response.json())
       .then((data) => setAdmins(data.admins));
   }, []);
@@ -52,6 +61,9 @@ export const Admin = () => {
     <>
       <Box sx={{ flexGrow: 1 }}>
         <form onSubmit={adminCreator} id="create_admin_form">
+          <div style={{ textAlign: "left", fontWeight: "600" }}>
+            <p>Admin Details: </p>
+          </div>
           <Grid container spacing={2}>
             <Grid item xs={3}>
               <Item>
@@ -106,6 +118,52 @@ export const Admin = () => {
               </Item>
             </Grid>
           </Grid>
+          <Box>
+            <div style={{ textAlign: "left", fontWeight: "600" }}>
+              <p>Address: </p>
+            </div>
+            <Grid container spacing={2}>
+              <Grid item xs={3}>
+                <Item>
+                  <input
+                    type="text"
+                    placeholder="Door No."
+                    name="door_number"
+                  />
+                </Item>
+              </Grid>
+              <Grid item xs={3}>
+                <Item>
+                  <input type="text" placeholder="Apartment" name="apartment" />
+                </Item>
+              </Grid>
+
+              <Grid item xs={3}>
+                <Item>
+                  <input type="text" placeholder="Street" name="street" />
+                </Item>
+              </Grid>
+              <Grid item xs={3}>
+                <Item>
+                  <input type="text" placeholder="City" name="city" />
+                </Item>
+              </Grid>
+              <Grid item xs={3}>
+                <Item>
+                  <input type="text" placeholder="Country" name="country" />
+                </Item>
+              </Grid>
+              <Grid item xs={3}>
+                <Item>
+                  <input
+                    type="text"
+                    placeholder="Postal Code"
+                    name="postal_code"
+                  />
+                </Item>
+              </Grid>
+            </Grid>
+          </Box>
           <button
             type="submit"
             style={{ background: "blue", margin: "40px", color: "white" }}

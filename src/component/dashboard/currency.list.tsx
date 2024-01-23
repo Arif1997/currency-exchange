@@ -6,11 +6,12 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../../ngrokurl";
 
 export default function Currency() {
   const [currencies, setCurrencies] = useState<any[]>();
   useEffect(() => {
-    fetch("http://localhost:8000/currency/")
+    fetch(`${BASE_URL}currency/`)
       .then((response) => response.json())
       .then((data) => setCurrencies(data.currencies));
   }, []);

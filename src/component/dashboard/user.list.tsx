@@ -7,12 +7,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useEffect, useState } from "react";
 import { User } from "./user";
+import { BASE_URL } from "../../ngrokurl";
 
 export default function UserList() {
   const [users, setUsers] = useState<any[]>();
   const [selectedUser, setSelectedUser] = useState<any>();
   useEffect(() => {
-    fetch("http://localhost:8000/user/")
+    fetch(`${BASE_URL}user/`)
       .then((response) => response.json())
       .then((data) => setUsers(data.Users));
   }, []);

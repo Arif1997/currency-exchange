@@ -17,24 +17,6 @@ import { login } from "../services/auth.service";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import authHeader from "../services/auth-header";
 
-function Copyright(props: any) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://smartsydney.org">
-        Smart Sydney
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const defaultTheme = createTheme();
 
 export default function SignIn() {
@@ -157,7 +139,6 @@ export default function SignIn() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
         </Container>
       </div>
     </ThemeProvider>

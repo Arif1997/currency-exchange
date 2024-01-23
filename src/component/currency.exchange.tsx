@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Input, InputAdornment } from "@mui/material";
 import { FaTelegramPlane } from "react-icons/fa";
 import { IoMdSwap } from "react-icons/io";
+import { BASE_URL } from "../ngrokurl";
 
 const Currency = (props: any) => {
   let iconStyles = {
@@ -43,7 +44,7 @@ const Currency = (props: any) => {
   var navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/currency")
+    fetch(`${BASE_URL}currency`)
       .then((response) => response.json())
       .then((data) => setcurrencies_data(data.currencies));
   }, []);
@@ -61,9 +62,7 @@ const Currency = (props: any) => {
     });
     if (Number(currencies_data[value].id) && to_currency.id) {
       const response = await axios.get(
-        `http://localhost:8000/rate/${Number(currencies_data[value].id)}/${
-          to_currency.id
-        }`
+        `${BASE_URL}rate/${Number(currencies_data[value].id)}/${to_currency.id}`
       );
       setRate(response.data.rate);
     }
@@ -79,7 +78,7 @@ const Currency = (props: any) => {
     });
     if (from_currency.id && Number(currencies_data[value].id)) {
       const response = await axios.get(
-        `http://localhost:8000/rate/${from_currency.id}/${Number(
+        `${BASE_URL}rate/${from_currency.id}/${Number(
           currencies_data[value].id
         )}`
       );
@@ -106,8 +105,6 @@ const Currency = (props: any) => {
     setFromAmount(convertedValue);
   };
 
-  console.log(payment_method);
-
   return (
     <>
       <div className="currency__exchange">
@@ -131,14 +128,7 @@ const Currency = (props: any) => {
         <div className="rate__converter">
           <div>
             <p style={{ textAlign: "left", margin: "3px" }}>From</p>
-            <div
-              style={{
-                border: "1px solid darkgray",
-                borderRadius: "10px",
-                alignItems: "center",
-                display: "flex",
-              }}
-            >
+            <div className="converter__inputs">
               <img
                 src="/images/usa_flag.png"
                 alt="Flag"
@@ -179,14 +169,7 @@ const Currency = (props: any) => {
           <IoMdSwap style={iconStyles} />
           <div>
             <p style={{ textAlign: "right", margin: "3px" }}>To</p>
-            <div
-              style={{
-                border: "1px solid darkgray",
-                borderRadius: "10px",
-                alignItems: "center",
-                display: "flex",
-              }}
-            >
+            <div className="converter__inputs">
               <Input
                 id="standard-adornment-amount"
                 disableUnderline

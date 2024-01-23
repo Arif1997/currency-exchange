@@ -1,13 +1,19 @@
 .currency__exchange {
   display: block;
   border-radius: 18px;
-  box-shadow: 4px 4px 4px 0px #888888;
+  box-shadow: 0px 0px 8px 0.5px #d4d4d4;
+
   border: 1px solid lightgray;
   width: 55vw;
   margin: auto;
   padding: 20px;
 }
-
+.converter__inputs {
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+}
 .rate__converter select {
   width: 50px;
   height: 35px;
@@ -24,12 +30,26 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
+  .converter__inputs {
+    max-width: 220px;
+  }
+}
+@media screen and (max-width: 700px) {
   .currency__exchange {
     width: 85vw;
   }
   .rate__converter {
     display: block;
+  }
+
+  .converter__inputs {
+    width: auto;
+    max-width: none;
+  }
+  .rate__converter select {
+    width: 40px;
+    font-size: 0.7rem;
   }
 
   .debit__card input {

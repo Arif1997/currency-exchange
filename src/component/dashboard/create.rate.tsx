@@ -2,6 +2,7 @@ import axios from "axios";
 import { ChangeEvent, useEffect, useState } from "react";
 import { CurrencyData } from "../../interfaces";
 import { IoMdSwap } from "react-icons/io";
+import { BASE_URL } from "../../ngrokurl";
 
 export const CreatRate = () => {
   let iconStyles = {
@@ -16,7 +17,7 @@ export const CreatRate = () => {
     []
   );
   useEffect(() => {
-    fetch("http://localhost:8000/currency")
+    fetch(`${BASE_URL}currency`)
       .then((response) => response.json())
       .then((data) => {
         setcurrencies_data(data.currencies);
@@ -65,7 +66,7 @@ export const CreatRate = () => {
   };
 
   const createRate = async () => {
-    const response = await axios.post(`http://localhost:8000/rate/create`, {
+    const response = await axios.post(`${BASE_URL}rate/create`, {
       from_currency,
       to_currency,
       rate,

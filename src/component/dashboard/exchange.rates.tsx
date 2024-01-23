@@ -10,13 +10,14 @@ import {
 import { useState, useEffect, ChangeEvent } from "react";
 import { CreatRate } from "./create.rate";
 import axios from "axios";
+import { BASE_URL } from "../../ngrokurl";
 
 export const ExchangeRates = () => {
   const [exchange_rates, setExchangeRates] = useState<any[]>();
   const [updatedRate, setUpdatedRate] = useState<number>(0);
 
   useEffect(() => {
-    fetch("http://localhost:8000/rate/")
+    fetch(`${BASE_URL}rate/`)
       .then((response) => response.json())
       .then((data) => setExchangeRates(data.exchange_rates));
   }, []);
@@ -28,7 +29,7 @@ export const ExchangeRates = () => {
 
   const handleUpdateRate = async (exchange_rate: any) => {
     if (updatedRate !== 0) {
-      const response = await axios.post(`http://localhost:8000/rate/create`, {
+      const response = await axios.post(`${BASE_URL}rate/create`, {
         from_currency: exchange_rate?.from_currency.currency_code,
         to_currency: exchange_rate?.to_currency.currency_code,
         rate: updatedRate,

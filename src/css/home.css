@@ -1,9 +1,33 @@
+.home__page {
+  margin: 60px auto 0 auto;
+  position: relative;
+  height: 70vh;
+  background-image: url("/images/map.png");
+  background-repeat: no-repeat;
+  background-size: 100vw 90vh;
+  background-position: 0 0;
+  animation: slideBg 10s alternate-reverse infinite;
+}
+
+@keyframes slideBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.currency__exchange__section {
+  position: relative;
+  top: 60vh;
+}
+
 .send__money__option {
   margin: auto;
   padding: 5px 10px;
   width: 50vw;
   height: auto;
-  position: relative;
 }
 
 .send__money__option button p {
@@ -20,60 +44,31 @@
   font-size: 28px;
 }
 
-.send__money__online {
-  border: 1px solid #d3d3d3;
-
-  background-color: #ebeaea;
-  height: 120px;
-  width: 180px;
-  position: relative;
-  margin: 20px 15px 20px 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 4px 4px 4px 0px #888888;
-}
-
+.send__money__online,
 .send__money__in__store {
   border: 1px solid #d3d3d3;
-  background-color: #ebeaea;
+  background-color: #f7f7f7;
   height: 120px;
-  width: 180px;
-  margin: 15px 20px;
-  box-shadow: 4px 4px 4px 0px #888888;
-
+  width: 28%;
+  min-width: 170px;
+  margin: 0 15px 40px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0px 0px 5px 0.5px #c2c2c2;
 }
+
 .send__money__in__store img {
   width: 20px;
   height: 25px;
 }
 
-.store__add__on__map {
-  height: 100%;
-  background-image: url("/images/map.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
-  animation: slideBg 10s alternate-reverse infinite; /* Adjust timing as needed */
-}
-
-@keyframes slideBg {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .send__money__in__store,
   .send__money__online {
     height: 80px;
-    width: 300px;
     padding: 0;
-    margin: 5px 10px;
   }
   .send__money__option {
+    width: 80%;
     display: flex;
   }
   .send__money__option button p {
@@ -89,20 +84,15 @@
 }
 
 @media screen and (max-width: 900px) {
-  .store__add__on__map {
-    height: auto;
-    background-size: 100vw, 70vh;
-  }
-  .store__add__on__map {
-    height: 55vh;
-    background-size: 230vw, 50vh;
+  .home__page {
+    background-size: 150vw, 80vh;
   }
   .send__money__in__store,
   .send__money__online {
-    height: 80px;
-    width: 300px;
+    min-width: 140px;
+    height: 90px;
     padding: 0;
-    margin: 5px 10px;
+    margin: 30px 15px 20px 20px;
   }
   .send__money__option {
     display: flex;
@@ -112,7 +102,6 @@
     font-size: 12px;
   }
   .send__money__option button strong {
-    margin-left: 8px;
     color: blue;
     font-weight: 500;
     font-size: 15px;

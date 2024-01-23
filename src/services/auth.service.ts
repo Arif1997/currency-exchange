@@ -1,16 +1,16 @@
 import axios from "axios";
-
-const API_URL = "http://localhost:8000/auth";
+import { BASE_URL } from "../ngrokurl";
 
 export const register = (email: string, password: string) => {
-  return axios.post(API_URL + "signup", {
+  return axios.post(`${BASE_URL}signup`, {
     email,
     password,
   });
 };
 
 export const login = async (email: string, password: string, role: string) => {
-  const response = await axios.post(API_URL, {
+  console.log(BASE_URL);
+  const response = await axios.post(`${BASE_URL}auth`, {
     email,
     password,
     role,

@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import "../../css/dashboard/user.css";
 import axios from "axios";
+import { BASE_URL } from "../../ngrokurl";
 export const User = (props: any) => {
   const [updatedUserData, setUpdatedUserData] = useState(
     props.user ? props.user : undefined
@@ -18,7 +19,7 @@ export const User = (props: any) => {
     e.preventDefault;
     try {
       await axios.post(
-        `http://localhost:8000/user/update/${updatedUserData.id}`,
+        `${BASE_URL}user/update/${updatedUserData.id}`,
         updatedUserData
       );
       alert("User data updated successfully");
