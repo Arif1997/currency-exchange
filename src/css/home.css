@@ -1,7 +1,7 @@
 .home__page {
-  margin: 60px auto 0 auto;
+  margin: 20px auto 0 auto;
   position: relative;
-  height: 70vh;
+  height: 76vh;
   background-image: url("/images/map.png");
   background-repeat: no-repeat;
   background-size: 100vw 90vh;

@@ -6,13 +6,21 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     //
   };
 
   return (
-    <Box sx={{ height: "100vh" }}>
+    <Box
+      sx={{
+        position: "relative",
+        margin: "80px auto",
+        width: "80vw",
+        border: "1px solid darkgrey",
+        borderRadius: "10px",
+      }}
+    >
       <Grid
         container
         direction="column"

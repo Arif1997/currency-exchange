@@ -1,34 +1,38 @@
 .send_money_page {
-  margin: 100px auto;
+  position: relative;
+  top: 20px;
+  height: 100vh;
+  margin: 70px auto;
+}
+.send_money_form {
+  margin: auto;
   padding: 70px 20px;
+  border: 1px solid darkgrey;
   border-radius: 10px;
   width: 40vw;
   min-width: 400px;
-  border: 1px solid lightgray;
-  background-color: rgb(233, 233, 233);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .custom__text__fields {
-  width: 50%;
+  width: 60%;
   margin: 10px auto;
 }
 
-.send_money_page button {
+.send_money_form button {
   width: 120px;
   margin: 10px auto;
 }
 
 @media screen and (max-width: 700px) {
-  .send_money_page {
-    margin: 100px auto;
+  .send_money_form {
+    margin: 60px auto;
     border-radius: 10px;
-    width: 80vw;
-    border: none;
+    padding: 0;
   }
   .custom__text__fields {
-    width: 90%;
+    width: 80%;
   }
 }

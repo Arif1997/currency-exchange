@@ -37,4 +37,8 @@
   .header__tabs a button {
     display: none;
   }
+
+  .app__bar {
+    width: 100vw;
+  }
 }

@@ -4,9 +4,15 @@ export default function About() {
       style={{
         marginTop: "70px",
         textAlign: "left",
-        padding: "20px 100px",
+        padding: "20px 70px",
       }}
     >
+      <img
+        src="https://www.investopedia.com/thmb/M-we6mdLUgezNP-XsAoli0Lf070=/2121x1414/filters:fill(auto,1)/GettyImages-974812152-705d0a6d517947fb8946a3c887d528be.jpg"
+        alt="about_image"
+        width={"60%"}
+        height={"400px"}
+      />
       <h6>Welcome to XYZ Transfer</h6>
       <p>
         At XYZ we simplify currency exchange and money transfer to make your

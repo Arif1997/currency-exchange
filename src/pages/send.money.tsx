@@ -72,71 +72,73 @@ const SendMoney = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="send_money_page">
-      <p style={{ fontSize: "large" }}>
-        Please Provide the details of the receiver!!!
-      </p>
-      <TextField
-        id="filled-basic"
-        label="Receiver Full Name"
-        variant="filled"
-        name="receiver_name"
-        type="text"
-        sx={{ m: 1 }}
-        className="custom__text__fields"
-        onChange={handleInputChange}
-      />
-      <TextField
-        id="filled-basic"
-        label="Receiver ID"
-        variant="filled"
-        name="receiver_id"
-        type="text"
-        sx={{ m: 1 }}
-        onChange={handleInputChange}
-        className="custom__text__fields"
-      />
-      <TextField
-        id="outlined-basic"
-        label="Phone"
-        variant="filled"
-        name="receiver_phone"
-        type="number"
-        sx={{ m: 1 }}
-        className="custom__text__fields"
-        onChange={handleInputChange}
-      />
-      <TextField
-        id="filled-basic"
-        label="Address"
-        variant="filled"
-        name="receiver_address"
-        type="text"
-        sx={{ m: 1 }}
-        className="custom__text__fields"
-        onChange={handleInputChange}
-      />
-      <div
-        style={{
-          display: "flex",
-          margin: "30px auto",
-          border: "1px solid white",
-          borderRadius: "8px",
-          padding: "10px",
-        }}
-      >
-        <span style={{ marginRight: "20px" }}>
-          Transfer : {formData.from_amount} {formData.from_currency}
-        </span>
-        <IoMdSwap />
-        <span style={{ marginLeft: "20px" }}>
-          Collect: {formData.to_amount} {formData.to_currency}
-        </span>
-      </div>
-      <Button variant="contained" color="primary" type="submit">
-        Transfer
-      </Button>
-    </form>
+    <div className="send_money_page">
+      <form onSubmit={handleSubmit} className="send_money_form">
+        <p style={{ fontSize: "large" }}>
+          Please Provide the details of the receiver!!!
+        </p>
+        <TextField
+          id="filled-basic"
+          label="Receiver Full Name"
+          variant="filled"
+          name="receiver_name"
+          type="text"
+          sx={{ m: 1 }}
+          className="custom__text__fields"
+          onChange={handleInputChange}
+        />
+        <TextField
+          id="filled-basic"
+          label="Receiver ID"
+          variant="filled"
+          name="receiver_id"
+          type="text"
+          sx={{ m: 1 }}
+          onChange={handleInputChange}
+          className="custom__text__fields"
+        />
+        <TextField
+          id="outlined-basic"
+          label="Phone"
+          variant="filled"
+          name="receiver_phone"
+          type="number"
+          sx={{ m: 1 }}
+          className="custom__text__fields"
+          onChange={handleInputChange}
+        />
+        <TextField
+          id="filled-basic"
+          label="Address"
+          variant="filled"
+          name="receiver_address"
+          type="text"
+          sx={{ m: 1 }}
+          className="custom__text__fields"
+          onChange={handleInputChange}
+        />
+        <div
+          style={{
+            display: "flex",
+            margin: "30px auto",
+            border: "1px solid white",
+            borderRadius: "8px",
+            padding: "10px",
+          }}
+        >
+          <span style={{ marginRight: "20px" }}>
+            Transfer : {formData.from_amount} {formData.from_currency}
+          </span>
+          <IoMdSwap />
+          <span style={{ marginLeft: "20px" }}>
+            Collect: {formData.to_amount} {formData.to_currency}
+          </span>
+        </div>
+        <Button variant="contained" color="primary" type="submit">
+          Transfer
+        </Button>
+      </form>
+    </div>
   );
 };
 
