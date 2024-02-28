@@ -50,7 +50,7 @@ const Header = () => {
             value={{ className: "shared-class", size: "18" }}
           >
             <Tabs
-              style={{ height: "60px" }}
+              style={{ height: "60px", margin: "auto", }}
               indicatorColor="secondary"
               textColor="inherit"
               value={value}

@@ -91,3 +91,12 @@
   height: 20px;
   margin-right: 20px;
 }
+
+
+@media screen and (max-width: 700px) {
+
+  .debit__card {
+    display: grid;
+    justify-content: center;
+  }
+}

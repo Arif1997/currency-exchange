@@ -26,7 +26,7 @@
 .send__money__option {
   margin: auto;
   padding: 5px 10px;
-  width: 50vw;
+  /* width: 50vw; */
   height: auto;
 }
 
@@ -49,7 +49,6 @@
   border: 1px solid #d3d3d3;
   background-color: #f7f7f7;
   height: 120px;
-  width: 28%;
   min-width: 170px;
   margin: 0 15px 40px 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -68,7 +67,7 @@
     padding: 0;
   }
   .send__money__option {
-    width: 80%;
+    /* width: 80%; */
     display: flex;
   }
   .send__money__option button p {
@@ -85,7 +84,9 @@
 
 @media screen and (max-width: 900px) {
   .home__page {
-    background-size: 150vw, 80vh;
+    background-size: 150vw, 60vh;
+    margin: 73px auto 0 auto;
+    height: 32vh;
   }
   .send__money__in__store,
   .send__money__online {

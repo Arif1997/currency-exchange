@@ -5,7 +5,7 @@ import { MdLocationPin } from "react-icons/md";
 
 export default function StoreDetails() {
     return (
-        <Box sx={{ flexGrow: 1 , display: 'flex', marginTop: '15px', justifyContent:'center'}} >
+        <Box className='address-style' sx={{ flexGrow: 1 , marginTop: '15px', justifyContent:'center'}}>
             <div style={{ width: '230px' , margin: '20px'}}>
                 <div style={{ borderBottom: '3px solid blue', color: 'white', marginLeft: '15px' }}>
                     <p style={{ backgroundColor: 'blue', borderRadius: '7px 7px 0 0', width: '100px', margin: '0' }}>Australia</p>
