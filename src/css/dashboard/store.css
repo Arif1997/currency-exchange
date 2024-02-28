@@ -13,3 +13,13 @@
   border-radius: 5px;
   background-color: rgb(240, 240, 240);
 }
+.address-style{
+  display: flex;
+}
+@media screen and (max-width: 800px) {
+
+  .address-style{
+    display: grid;
+  }
+
+}
